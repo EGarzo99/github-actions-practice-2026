@@ -1,0 +1,42 @@
+name: Trial Issue AI Summary
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  trial-ai:
+    runs-on: ubuntu-latest
+
+    if: contains(github.event.issue.title, '[trial]')
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract topic
+        run: |
+          echo "TOPIC=${{ github.event.issue.title }}" >> $GITHUB_ENV
+
+      - name: Search topic with Brave
+        run: |
+          curl "https://api.search.brave.com/res/v1/web/search?q=${TOPIC}&freshness=pw" \
+          -H "X-Subscription-Token: ${{ secrets.BRAVE_API_KEY }}" \
+          > results.json
+
+      - name: Show results
+        run: cat results.json
+
+      - name: Save results as text
+        run: |
+          # simply copy JSON to a .txt file; adjust formatting if needed
+          cp results.json results.txt
+
+      - name: Commit results file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results.txt
+          git commit -m "Add search results for $TOPIC" || echo "No changes to commit"
+          git push
