@@ -21,7 +21,8 @@ jobs:
 
       - name: Search topic with Brave
         run: |
-          curl "https://api.search.brave.com/res/v1/web/search?q=${TOPIC}&freshness=pw" \
+          ENCODED_TOPIC=$(printf %s "$TOPIC" | jq -sRr @uri)
+          curl "https://api.search.brave.com/res/v1/web/search?q=${ENCODED_TOPIC}&freshness=pw" \
           -H "X-Subscription-Token: ${{ secrets.BRAVE_API_KEY }}" \
           > results.json
 
