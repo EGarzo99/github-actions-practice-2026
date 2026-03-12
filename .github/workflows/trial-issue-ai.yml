@@ -1,16 +1,18 @@
 name: Trial Issue AI Summary
 
 on:
-  issues:
-    types: [opened]
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Topic'
+        required: true
+        type: string
 
 jobs:
   trial-ai:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
-    if: contains(github.event.issue.title, '[trial]')
 
     steps:
 
@@ -23,7 +25,7 @@ jobs:
           echo "$TOPIC_INPUT" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
         env:
-          TOPIC_INPUT: ${{ github.event.issue.title }}
+          TOPIC_INPUT: ${{ inputs.topic }}
 
       - name: Search topic with Brave
         run: |
