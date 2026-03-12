@@ -1,0 +1,18 @@
+== Search results for: Best current AI for code ==
+
+• Best Free AI Coding Tools in 2026: 7 Tools You Can Use Without Paying | NxCode
+  The best free AI coding tools in 2026, compared. <strong>GitHub Copilot Free, Cursor free tier, OpenCode, Aider, Continue, Gemini Code Assist, and Amazon Q Developer</strong> — what you actually get for $0.
+  https://www.nxcode.io/resources/news/best-free-ai-coding-tools-2026
+
+• Generative AI Assistant for Software Development – Amazon Q Developer – AWS
+  <strong>Amazon Q Developer</strong> is the most capable generative AI–powered assistant for building, operating, and transforming software, with advanced capabilities for managing data and AI/ML.
+  https://aws.amazon.com/q/developer/
+
+• Best LLM for Coding 2026 | AI Coding Model Rankings & Benchmarks | Onyx AI
+  Which AI model writes the best code? We rank every major LLM — open and closed source — across SWE-bench, HumanEval, LiveCodeBench, and Terminal-Bench coding benchmarks. Compare the best LLMs for coding, software engineering, and programming.
+  https://onyx.app/best-llm-for-coding
+
+• What's the Best AI Model for Coding? | Krater
+  The best AI model for coding depends on the task. Compare <strong>Claude Sonnet 5,</strong> GPT-5.4, Gemini 3, and DeepSeek for code generation, debugging, and more.
+  https://krater.ai/blog/best-ai-model-for-coding
+
